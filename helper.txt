@@ -1,0 +1,33 @@
+
+
+
+
+//Helper to hash passwords
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+
+//Hash passowrd
+def hash_password(self):
+        return pwd_context.hash(self.password)
+
+//verify passowrd
+def verify_password(plain_password, hashed_password) -> bool:
+
+    return pwd_context.verify(plain_password, hashed_password)
+
+
+//Create Token
+def generate_token(user_id: str):
+    payload = {"sub": user_id, "exp": datetime.datetime.now() + datetime.timedelta(days=3)}
+    token = jwt.encode(payload, secretKey, algorithm=algorithm)
+    return token
+
+//Verify Token
+def verify_token_validity(token: str) -> object:
+    try:
+        decoded = jwt.decode(token, secretKey, algorithms=[algorithm])
+        return decoded['sub']
+    except:
+        return None
+
