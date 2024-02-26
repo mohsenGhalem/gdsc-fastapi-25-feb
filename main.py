@@ -1,12 +1,17 @@
 
+from fastapi import FastAPI
+import uvicorn
 
-#TODO: 1. Create a greeting for your program.
-
-
-
-
-
+from services import auth_service
+from services import user_service
 
 
+app = FastAPI()
 
-#TODO: 2.configure the univcorn to run the app
+app.include_router(auth_service.router)
+
+app.include_router(user_service.router)
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, log_level="info")

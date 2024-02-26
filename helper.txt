@@ -1,7 +1,6 @@
 
 
 
-
 //Helper to hash passwords
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

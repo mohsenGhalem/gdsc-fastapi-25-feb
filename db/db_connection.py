@@ -1,12 +1,17 @@
+import os
+
+import pymongo
+from pymongo import MongoClient
 
 
-#TODO: Add the code to connect to the database
+def get_database():
+    connection_string = os.environ.get('MONGO_CONNECTION_STRING')
+
+    client = MongoClient(connection_string)
+
+    return client['gdsc']
 
 
-
-
-
-
-
-
-#TODO: Add code to close the connection to the database
+def close_db_connection():
+    client = pymongo.MongoClient()
+    client.close()
