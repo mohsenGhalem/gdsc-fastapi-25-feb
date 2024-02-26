@@ -1,8 +1,3 @@
-
-    connection = "mongodb+srv://<gdsc>:<uL01MstxFwds06ro>@gdsc.2euqter.mongodb.net/?retryWrites=true&w=majority&appName=gdsc"
-
-
-
 # FastAPI Authentication Workshop Demo Code
 
 Welcome to the FastAPI Authentication Workshop Demo Code repository! This repository contains the demo code used in the workshop for implementing authentication with FastAPI.
